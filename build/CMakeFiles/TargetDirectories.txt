@@ -1,0 +1,2 @@
+/Users/mqm/WORKSPACE/CODE/cpp/Qt6CppDevStudy/build/CMakeFiles/edit_cache.dir
+/Users/mqm/WORKSPACE/CODE/cpp/Qt6CppDevStudy/build/CMakeFiles/rebuild_cache.dir
