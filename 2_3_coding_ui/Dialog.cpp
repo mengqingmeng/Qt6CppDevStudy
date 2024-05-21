@@ -6,6 +6,13 @@ Dialog::Dialog(QWidget *parent)
     initUI();
     initSignalSlots();
     setWindowTitle(tr("手工创建UI"));
+    // 生成一个随机的 UUID
+    QUuid uuid = QUuid::createUuid();
+
+    // 将 UUID 转换为字符串格式
+    QString uuidString = uuid.toString(QUuid::WithoutBraces);
+
+    qDebug() << "Generated UUID: " << uuidString;
 }
 
 Dialog::~Dialog()
