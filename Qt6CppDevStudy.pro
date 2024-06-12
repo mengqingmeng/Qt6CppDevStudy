@@ -7,5 +7,6 @@ SUBDIRS += \
     14_3_wait_condition \
     2_3_coding_ui \
     2_3_coding_ui \
+    8_4_graphics_scene \
     8_4_graphics_view \
     9_1_database
