@@ -18,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addWidget(sceneCordLabel);
     ui->statusbar->addWidget(itemCordLabel);
 
+    ui->graphicsView->setCursor(Qt::CrossCursor);// 十字形光标
+    ui->graphicsView->setMouseTracking(true);   // 开启鼠标追踪
+    ui->graphicsView->setDragMode(QWGraphicsView::RubberBandDrag); // 矩形选择框
+
     connect(ui->graphicsView,&QWGraphicsView::mouseMovePoint,this,[&](QPoint point){
         viewCordLabel->setText(QString::asprintf("View坐标：%d,%d",point.x(),point.y()));
 
@@ -87,5 +91,16 @@ void MainWindow::initGraphicsSystem()
     scene->addItem(textItem);
 
     scene->clearSelection();
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    QString str = QString::asprintf("Graphics View坐标，左上角是（0，0），宽度=%d,高度=%d",ui->graphicsView->width(),ui->graphicsView->height());
+    ui->viewSizeLabel->setText(str);
+
+    QRectF sceneRect = ui->graphicsView->sceneRect();
+    QString str2 = QString::asprintf("QGraphicsView::sceneRect=(Left,Top,Width,Height)""=%.0f,%.0f,%.0f,%.0f",
+                                     sceneRect.left(),sceneRect.top(),sceneRect.width(),sceneRect.height());
+    ui->sceneSizeLabel->setText(str2);
 }
 

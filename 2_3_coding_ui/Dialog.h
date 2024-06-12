@@ -8,6 +8,7 @@
 #include <QPlainTextEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QUuid>
 
 class Dialog : public QDialog
 {

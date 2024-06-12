@@ -29,5 +29,8 @@ private:
     QLabel* itemCordLabel;
 
     void initGraphicsSystem();
+protected:
+    void resizeEvent(QResizeEvent* event);
+
 };
 #endif // MAINWINDOW_H
